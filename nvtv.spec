@@ -20,6 +20,7 @@ URL:		http://sourceforge.net/projects/nv-tv-out/
 BuildRequires:	pciutils-devel 
 BuildRequires:	gtk2-devel
 BuildRequires:	libxmu-devel
+BuildRequires:	libxxf86vm-devel
 BuildRequires:	ImageMagick
 Requires:	pam
 Requires:	xorg-x11
@@ -71,7 +72,6 @@ popd
 
 %install
 rm -rf ${RPM_BUILD_ROOT}
-
 install -D -m755 src/nvtv ${RPM_BUILD_ROOT}/%{_sbindir}/nvtv
 install -D -m755 src/nvtvd ${RPM_BUILD_ROOT}/%{_sbindir}/nvtvd
 
