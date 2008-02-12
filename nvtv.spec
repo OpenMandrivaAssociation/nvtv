@@ -38,7 +38,6 @@ Group: System/Libraries
 Summary: Library to enable TV-Out on Linux for NVIDIA cards
 
 %description -n %libname
-
 This is a shared library to enable TV-Out on Linux for NVIDIA cards.
 It does not need the kernel, supports multiple TV encoder chips. You
 may use all the features of the chip, down to direct register access,
@@ -52,7 +51,6 @@ Obsoletes: %mklibname nvtvsimple 0 -d
 Summary: Library to enable TV-Out on Linux for NVIDIA cards
 
 %description -n %develname
-
 This is a shared library to enable TV-Out on Linux for NVIDIA cards.
 It does not need the kernel, supports multiple TV encoder chips. You
 may use all the features of the chip, down to direct register access,
