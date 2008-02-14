@@ -15,6 +15,7 @@ Source2:	nvtv.png
 Patch0:		nvtv-0.4.7-ppc-build-fix.patch
 License: 	GPLv2
 Group:		Video
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Summary: 	Enable TV-Out on Linux for NVIDIA cards	
 URL:		http://sourceforge.net/projects/nv-tv-out/	
 BuildRequires:	pciutils-devel 
