@@ -1,6 +1,5 @@
 %define name	nvtv 
 %define version	0.4.7
-%define release	%mkrel 11
 
 %define major		0
 %define libname		%mklibname nvtvsimple %major
@@ -8,7 +7,7 @@
 
 Name: 		%{name}
 Version: 	%{version}
-Release:	%{release}
+Release:	%mkrel 12
 Source0:	http://downloads.sourceforge.net/nv-tv-out/%{name}-%{version}.tar.gz
 Source1:	http://downloads.sourceforge.net/nv-tv-out/libnvtvsimple-0.4.7a.tar.gz
 Source2:	nvtv.png
