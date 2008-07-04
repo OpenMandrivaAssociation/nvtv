@@ -7,11 +7,12 @@
 
 Name: 		%{name}
 Version: 	%{version}
-Release:	%mkrel 12
+Release:	%mkrel 13
 Source0:	http://downloads.sourceforge.net/nv-tv-out/%{name}-%{version}.tar.gz
 Source1:	http://downloads.sourceforge.net/nv-tv-out/libnvtvsimple-0.4.7a.tar.gz
 Source2:	nvtv.png
 Patch0:		nvtv-0.4.7-ppc-build-fix.patch
+Patch1:		libnvtvsimple-0.4.7a-fix-linking.patch
 License: 	GPLv2
 Group:		Video
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -59,12 +60,18 @@ and all resolutions and sizes the chip supports.
 %prep
 %setup -q -b 1
 %patch0 -p1 -b .ppc-build-fix
+%patch1 -p1
+cd lib
+libtoolize --copy --force
+aclocal
+autoconf
+automake -a -c --foreign
 
 %build
 %configure2_5x --prefix=/bin --with-gtk=gtk2
 %make
 pushd lib
-%configure2_5x --with-gtk=gtk2
+%configure2_5x
 %make
 popd
 
