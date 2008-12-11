@@ -22,7 +22,7 @@ BuildRequires:	pciutils-devel
 BuildRequires:	gtk2-devel
 BuildRequires:	libxmu-devel
 BuildRequires:	libxxf86vm-devel
-BuildRequires:	ImageMagick
+BuildRequires:	imagemagick
 Requires:	pam
 Requires:	xorg-x11
 Requires:	usermode
