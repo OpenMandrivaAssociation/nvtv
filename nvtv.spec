@@ -77,22 +77,22 @@ pushd lib
 popd
 
 %install
-rm -rf ${RPM_BUILD_ROOT}
-install -D -m755 src/nvtv ${RPM_BUILD_ROOT}/%{_sbindir}/nvtv
-install -D -m755 src/nvtvd ${RPM_BUILD_ROOT}/%{_sbindir}/nvtvd
+rm -rf %{buildroot}
+install -D -m755 src/nvtv %{buildroot}/%{_sbindir}/nvtv
+install -D -m755 src/nvtvd %{buildroot}/%{_sbindir}/nvtvd
 
 # icons
-mkdir -p ${RPM_BUILD_ROOT}%{_iconsdir}/hicolor/{48x48,32x32,16x16}/apps
-install -m644 %{SOURCE2} ${RPM_BUILD_ROOT}%{_iconsdir}/hicolor/48x48/apps/%{name}.png
-convert -scale 32 %{SOURCE2} ${RPM_BUILD_ROOT}%{_iconsdir}/hicolor/32x32/apps/%{name}.png
-convert -scale 16 %{SOURCE2} ${RPM_BUILD_ROOT}%{_iconsdir}/hicolor/16x16/apps/%{name}.png
+mkdir -p %{buildroot}%{_iconsdir}/hicolor/{48x48,32x32,16x16}/apps
+install -m644 %{SOURCE2} %{buildroot}%{_iconsdir}/hicolor/48x48/apps/%{name}.png
+convert -scale 32 %{SOURCE2} %{buildroot}%{_iconsdir}/hicolor/32x32/apps/%{name}.png
+convert -scale 16 %{SOURCE2} %{buildroot}%{_iconsdir}/hicolor/16x16/apps/%{name}.png
 
 pushd lib
 %makeinstall_std
 popd
 
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
-cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
+mkdir -p %{buildroot}%{_datadir}/applications
+cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 [Desktop Entry]
 Name=Nvidia TV Output
 Comment=Frontend for Nvidia TV output
@@ -105,8 +105,8 @@ EOF
 
 
 #Lets make a nice dialog box asking for root perms:
-mkdir -p ${RPM_BUILD_ROOT}%{_sysconfdir}/{pam.d,security/console.apps}
-cat <<EOF >${RPM_BUILD_ROOT}%{_sysconfdir}/pam.d/%{name}
+mkdir -p %{buildroot}%{_sysconfdir}/{pam.d,security/console.apps}
+cat <<EOF >%{buildroot}%{_sysconfdir}/pam.d/%{name}
 #%PAM-1.0
 auth	sufficient	/lib/security/pam_rootok.so
 auth	include		system-auth
@@ -115,15 +115,15 @@ account	required	/lib/security/pam_permit.so
 EOF
 
 
-cat <<EOF >${RPM_BUILD_ROOT}%{_sysconfdir}/security/console.apps/%{name}
+cat <<EOF >%{buildroot}%{_sysconfdir}/security/console.apps/%{name}
 USER=root
 PROGRAM=/usr/sbin/nvtv
 SESSION=true
 FALLBACK=true
 EOF
 
-mkdir -p ${RPM_BUILD_ROOT}%{_bindir}
-ln -s %{_bindir}/consolehelper $RPM_BUILD_ROOT%{_bindir}/%name
+mkdir -p %{buildroot}%{_bindir}
+ln -s %{_bindir}/consolehelper %{buildroot}%{_bindir}/%name
 
 %if %mdkversion < 200900
 %post
@@ -145,7 +145,7 @@ ln -s %{_bindir}/consolehelper $RPM_BUILD_ROOT%{_bindir}/%name
 %endif
 
 %clean
-rm -rf ${RPM_BUILD_ROOT}
+rm -rf %{buildroot}
 
 %files
 %defattr (-,root,root)
