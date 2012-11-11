@@ -1,0 +1,22 @@
+--- nvtv/src/mmio.h.bak	2004-03-01 22:08:10.000000000 +0100
++++ nvtv/src/mmio.h	2004-06-16 20:22:43.269735691 +0200
+@@ -51,7 +51,7 @@
+ /* from xfree common/compiler.h */
+ 
+ #ifndef __NetBSD__
+-#ifdef linux 
++#if defined(linux) && !defined(__powerpc__) 
+ #include <sys/io.h>
+ 
+ #define OUTB(p,v) outb(v,p)
+--- nvtv/src/mmio.c.bak	2004-03-04 10:12:56.000000000 +0100
++++ nvtv/src/mmio.c	2004-06-16 20:23:01.885876326 +0200
+@@ -119,7 +119,7 @@
+ }
+ #endif /* __NetBSD__ */
+ 
+-#ifdef HAVE_WINIO
++#if defined(HAVE_WINIO) || defined(__powerpc__)
+ 
+ void 
+ mmio_port_perm (unsigned long from, unsigned long num, int turn_on)

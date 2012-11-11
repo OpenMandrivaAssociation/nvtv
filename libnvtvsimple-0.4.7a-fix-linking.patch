@@ -1,0 +1,11 @@
+--- nvtv-0.4.7/lib/configure.in.~1.5.~	2004-04-20 18:01:36.000000000 +0200
++++ nvtv-0.4.7/lib/configure.in	2008-07-04 11:02:53.000000000 +0200
+@@ -130,7 +130,7 @@
+ 	AC_CHECK_LIB(Xrandr, XRRUpdateConfiguration,
+ 		[AC_CHECK_HEADER(X11/extensions/Xrandr.h,
+ 			have_randr=yes
+-			RANDR_LIBS="-lXrandr -lXrender $GDK_LIBS"
++			RANDR_LIBS="-lXrandr -lXrender $GDK_LIBS -lX11"
+ 			RANDR_CFLAGS="-DHAVE_X -DHAVE_RANDR $GDK_CFLAGS",
+ 			:, [#include <X11/Xlib.h>])], : ,
+ 		-lXrandr -lXrender $x_libs)
