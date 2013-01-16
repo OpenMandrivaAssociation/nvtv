@@ -13,9 +13,9 @@ Source1:	http://downloads.sourceforge.net/nv-tv-out/libnvtvsimple-0.4.7a.tar.gz
 Source2:	nvtv.png
 Patch0:		nvtv-0.4.7-ppc-build-fix.patch
 Patch1:		libnvtvsimple-0.4.7a-fix-linking.patch
+Patch2:		nvtv-automake-1.13.patch
 License: 	GPLv2
 Group:		Video
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Summary: 	Enable TV-Out on Linux for NVIDIA cards	
 URL:		http://sourceforge.net/projects/nv-tv-out/	
 BuildRequires:	pciutils-devel 
@@ -60,8 +60,7 @@ and all resolutions and sizes the chip supports.
 
 %prep
 %setup -q -b 1
-%patch0 -p1 -b .ppc-build-fix
-%patch1 -p1
+%apply_patches
 cd lib
 libtoolize --copy --force
 aclocal

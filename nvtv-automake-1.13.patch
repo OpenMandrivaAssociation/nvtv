@@ -1,0 +1,21 @@
+--- nvtv-0.4.7/lib/configure.in.bero	2013-01-16 01:36:06.395022934 +0100
++++ nvtv-0.4.7/lib/configure.in	2013-01-16 01:36:13.287940388 +0100
+@@ -8,7 +8,7 @@ dnl Keep this in sync with main version
+ AC_INIT(libnvtvsimple,0.4.7,,libnvtvsimple-0.4.7)
+ AC_PREREQ(2.53)
+ AC_CONFIG_AUX_DIR(config)
+-AM_CONFIG_HEADER(simple_config.h)
++AC_CONFIG_HEADERS([simple_config.h])
+ 
+ dnl
+ dnl Check system type
+@@ -58,8 +58,7 @@ dnl
+ dnl Checks for programs.
+ dnl
+ 
+-dnl AC_PROG_CC
+-AM_PROG_CC_STDC
++AC_PROG_CC
+ AC_PROG_INSTALL
+ 
+ dnl
