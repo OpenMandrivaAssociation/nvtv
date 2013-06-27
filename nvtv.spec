@@ -1,13 +1,10 @@
-%define name	nvtv 
-%define version	0.4.7
-
 %define major		0
 %define libname		%mklibname nvtvsimple %major
 %define develname	%mklibname nvtvsimple -d
 
-Name: 		%{name}
-Version: 	%{version}
-Release:	%mkrel 20
+Name: 		nvtv
+Version: 	0.4.7
+Release:	21
 Source0:	http://downloads.sourceforge.net/nv-tv-out/%{name}-%{version}.tar.gz
 Source1:	http://downloads.sourceforge.net/nv-tv-out/libnvtvsimple-0.4.7a.tar.gz
 Source2:	nvtv.png
@@ -19,7 +16,7 @@ Group:		Video
 Summary: 	Enable TV-Out on Linux for NVIDIA cards	
 URL:		http://sourceforge.net/projects/nv-tv-out/	
 BuildRequires:	pciutils-devel 
-BuildRequires:	gtk2-devel
+BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	libxmu-devel
 BuildRequires:	libxxf86vm-devel
 BuildRequires:	imagemagick
@@ -199,7 +196,7 @@ rm -rf ${RPM_BUILD_ROOT}
 + Revision: 301194
 - rebuild for changed xcb
 
-* Fri Jul 04 2008 GÃ¶tz Waschk <waschk@mandriva.org> 0.4.7-13mdv2009.0
+* Fri Jul 04 2008 GÃƒÂ¶tz Waschk <waschk@mandriva.org> 0.4.7-13mdv2009.0
 + Revision: 231642
 - fix linking
 
@@ -238,7 +235,7 @@ rm -rf ${RPM_BUILD_ROOT}
 * Mon Jul 17 2006 Antoine Ginies <aginies@mandriva.com> 0.4.7-2.20040408.10mdv2007.0
 - patch from cris_@_beebgames.com, don't use obsolete gtK1.2
 
-* Wed Jun 28 2006 Götz Waschk <waschk@mandriva.org> 0.4.7-2.20040408.9mdv2007.0
+* Wed Jun 28 2006 GÃ¶tz Waschk <waschk@mandriva.org> 0.4.7-2.20040408.9mdv2007.0
 - fix buildrequires
 
 * Fri Jun 23 2006 Antoine Ginies <aginies@n3.mandriva.com> 0.4.7-1.20040408.8mdv2007.0
@@ -247,22 +244,22 @@ rm -rf ${RPM_BUILD_ROOT}
 * Fri Jun 23 2006 Antoine Ginies <aginies@n3.mandriva.com> 0.4.7-0.20040408.7mdv2007.0
 - xdg menu
 
-* Mon Oct 24 2005 Götz Waschk <waschk@mandriva.org> 0.4.7-0.20040408.6mdk
+* Mon Oct 24 2005 GÃ¶tz Waschk <waschk@mandriva.org> 0.4.7-0.20040408.6mdk
 - fix build
 
 * Wed Jun 16 2004 Christiaan Welvaart <cjw@daneel.dyndns.org> 0.4.7-0.20040408.5mdk
 - fix ppc build
 
-* Sat Apr 17 2004 Per Øyvind Karlsen <peroyvind@linux-mandrake.com> 0.4.7-0.20040408.4mdk
+* Sat Apr 17 2004 Per Ã˜yvind Karlsen <peroyvind@linux-mandrake.com> 0.4.7-0.20040408.4mdk
 - fix buildrequires
 
-* Fri Apr 16 2004 Götz Waschk <waschk@linux-mandrake.com> 0.4.7-0.20040408.3mdk
+* Fri Apr 16 2004 GÃ¶tz Waschk <waschk@linux-mandrake.com> 0.4.7-0.20040408.3mdk
 - fix buildrequires again
 
-* Thu Apr 15 2004 Götz Waschk <waschk@linux-mandrake.com> 0.4.7-0.20040408.2mdk
+* Thu Apr 15 2004 GÃ¶tz Waschk <waschk@linux-mandrake.com> 0.4.7-0.20040408.2mdk
 - fix buildrequires
 
-* Thu Apr  8 2004 Götz Waschk <waschk@linux-mandrake.com> 0.4.7-0.20040408.1mdk
+* Thu Apr  8 2004 GÃ¶tz Waschk <waschk@linux-mandrake.com> 0.4.7-0.20040408.1mdk
 - build libnvtvsimple
 - fix configure call
 - new snapshot
