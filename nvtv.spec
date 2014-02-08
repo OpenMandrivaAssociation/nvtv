@@ -4,7 +4,7 @@
 
 Name: 		nvtv
 Version: 	0.4.7
-Release:	21
+Release:	22
 Source0:	http://downloads.sourceforge.net/nv-tv-out/%{name}-%{version}.tar.gz
 Source1:	http://downloads.sourceforge.net/nv-tv-out/libnvtvsimple-0.4.7a.tar.gz
 Source2:	nvtv.png
