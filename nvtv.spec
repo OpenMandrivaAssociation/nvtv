@@ -63,10 +63,11 @@ touch NEWS AUTHORS ChangeLog
 autoreconf -fi
 
 %build
-%configure2_5x --prefix=/bin --with-gtk=gtk2
+export CC=gcc
+%configure --prefix=/bin --with-gtk=gtk2
 %make
 pushd lib
-%configure2_5x --disable-static
+%configure
 %make
 popd
 
