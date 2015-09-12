@@ -5,7 +5,7 @@
 Summary:	Enable TV-Out on Linux for NVIDIA cards	
 Name:		nvtv
 Version:	0.4.7
-Release:	29
+Release:	30
 License:	GPLv2
 Group:		Video
 Url:		http://sourceforge.net/projects/nv-tv-out/	
