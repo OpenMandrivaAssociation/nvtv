@@ -1,6 +1,8 @@
 %define major	0
 %define libname	%mklibname nvtvsimple %{major}
 %define devname	%mklibname nvtvsimple -d
+%define _disable_lto 1
+%define _disable_rebuild_configure 1
 
 Summary:	Enable TV-Out on Linux for NVIDIA cards	
 Name:		nvtv
@@ -63,7 +65,7 @@ touch NEWS AUTHORS ChangeLog
 autoreconf -fi
 
 %build
-export CC=gcc
+export CC='gcc -fgnu89-inline'
 %configure --prefix=/bin --with-gtk=gtk2
 %make
 pushd lib
