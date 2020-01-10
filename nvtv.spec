@@ -59,7 +59,7 @@ and all resolutions and sizes the chip supports.
 
 %prep
 %setup -q -b 1
-%apply_patches
+%autopatch -p1
 cd lib
 touch NEWS AUTHORS ChangeLog
 autoreconf -fi
