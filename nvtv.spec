@@ -18,6 +18,11 @@ Patch0:		nvtv-0.4.7-ppc-build-fix.patch
 Patch1:		libnvtvsimple-0.4.7a-fix-linking.patch
 Patch2:		nvtv-automake-1.13.patch
 ExclusiveArch:	%{ix86} x86_64
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	imagemagick
 BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	pkgconfig(libpci)
